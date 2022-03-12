@@ -1,0 +1,27 @@
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
+
+
+function generateTarget(){
+  return Math.floor(Math.random() * 10);
+}
+function compareGuesses(user_guess, computer_guess, target_num){
+  let target_num = generateTarget()
+  if (user_guess - target_num <= computer_guess - target_num){
+    return true
+} else {
+  return false
+}
+
+function updateScore(winner){
+  if(winner === 'human'){
+    humanScore++;
+  } else if(winner === 'computer') {
+    computerScore++;
+  }
+}
+
+function advanceRound(){
+  currentRoundNumber++
+}
